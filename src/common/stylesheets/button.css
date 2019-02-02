@@ -1,0 +1,8 @@
+.button-rounded {
+  border-radius: 25px !important;
+}
+
+.button-style--default {
+  background-color: #67d15f !important;
+  color: white !important;
+}
