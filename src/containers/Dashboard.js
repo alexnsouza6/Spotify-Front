@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
+import { history } from '../App';
 
 class Dashboard extends Component {
   state = { user: {} };
@@ -11,12 +12,15 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.state;
-    return (
-      <Fragment>
-        Hello,
-        {user.username}
-      </Fragment>
-    );
+    if (this.state.user) {
+      return (
+        <Fragment>
+          Hello,
+          {user.username}
+        </Fragment>
+      );
+    }
+    return history.push('/login');
   }
 }
 
