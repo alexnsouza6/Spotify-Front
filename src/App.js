@@ -1,23 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Button } from 'semantic-ui-react';
+import { Router, Route, Switch } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 import Dashboard from './containers/Dashboard';
+import LoginPage from './components/LoginPage';
+import './common/stylesheets/index.css';
 
-const button = () => (
-  <Button as="a" href="http://localhost:3000/api/v1/login">
-    Log in
-    {' '}
-  </Button>
-);
+export const history = createBrowserHistory();
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Router history={history}>
           <Switch>
-            <Route exact path="/login" component={button} />
+            <Route exact path="/login" component={LoginPage} />
             <Route path="/" component={Dashboard} />
           </Switch>
         </Router>
