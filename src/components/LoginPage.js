@@ -20,7 +20,7 @@ const LoginPage = () => (
         <Button
           className="button-rounded button-style--default"
           as="a"
-          href="https://spotify-api-artists-only.herokuapp.com/api/v1/login"
+          href="http://localhost:3000/api/v1/login"
         >
           FIND OUT
           {' '}
