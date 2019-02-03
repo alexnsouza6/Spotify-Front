@@ -13,7 +13,11 @@ class Dashboard extends Component {
   async componentDidMount() {
     const userResponse = await axios.get(' http://localhost:3000/api/v1/user');
     this.setState({ user: userResponse.data });
-    const artistsResponse = await axios.get('http://localhost:3000/api/v1/artists');
+    const artistsResponse = await axios.get('http://localhost:3000/api/v1/artists', {
+      params: {
+        name: this.state.user.username,
+      },
+    });
     this.setState({ artists: artistsResponse.data });
   }
 
