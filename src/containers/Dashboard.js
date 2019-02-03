@@ -12,9 +12,9 @@ class Dashboard extends Component {
 
   async componentDidMount() {
     try {
-      const userResponse = await axios.get(' http://localhost:3000/api/v1/user');
+      const userResponse = await axios.get('https://spotify-api-artists-only.herokuapp.com/api/v1/user');
       this.setState({ user: userResponse.data });
-      const artistsResponse = await axios.get('http://localhost:3000/api/v1/artists', {
+      const artistsResponse = await axios.get('https://spotify-api-artists-only.herokuapp.com/api/v1/artists', {
         params: {
           name: this.state.user.username,
         },
