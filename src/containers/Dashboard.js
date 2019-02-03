@@ -11,8 +11,15 @@ class Dashboard extends Component {
   state = { user: {} };
 
   async componentDidMount() {
-    const response = await axios.get('http://localhost:3000/api/v1/user');
+    const response = await axios.get(' https://spotify-api-artists-only.herokuapp.com/api/v1/user');
     this.setState({ user: response.data });
+  }
+
+  componentDidUpdate() {
+    const { user } = this.state;
+    if (!user) {
+      history.push('/login');
+    }
   }
 
   render() {
@@ -39,7 +46,7 @@ class Dashboard extends Component {
         </Fragment>
       );
     }
-    return history.push('/login');
+    history.push('/login');
   }
 }
 
