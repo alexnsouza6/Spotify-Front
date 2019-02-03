@@ -11,19 +11,16 @@ class Dashboard extends Component {
   state = { user: {}, artists: [] };
 
   async componentDidMount() {
-    const userResponse = await axios.get(' http://localhost:3000/api/v1/user');
-    this.setState({ user: userResponse.data });
-    const artistsResponse = await axios.get('http://localhost:3000/api/v1/artists', {
-      params: {
-        name: this.state.user.username,
-      },
-    });
-    this.setState({ artists: artistsResponse.data });
-  }
-
-  componentDidUpdate() {
-    const { user } = this.state;
-    if (!user) {
+    try {
+      const userResponse = await axios.get(' http://localhost:3000/api/v1/user');
+      this.setState({ user: userResponse.data });
+      const artistsResponse = await axios.get('http://localhost:3000/api/v1/artists', {
+        params: {
+          name: this.state.user.username,
+        },
+      });
+      this.setState({ artists: artistsResponse.data });
+    } catch {
       history.push('/login');
     }
   }
@@ -78,7 +75,6 @@ class Dashboard extends Component {
         </Fragment>
       );
     }
-    history.push('/login');
   }
 }
 
