@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when testing w/ snapshots renders correctly 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="ui center aligned middle aligned grid container-fsize container-color--black"
+  >
+    <div
+      className="column container-fsize"
+    >
+      <div
+        className="ui segment container-fsize container-color--black"
+      >
+        <h1
+          className="ui huge header"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          <img
+            className="ui circular image"
+            src="spotify.png"
+          />
+          Hello, 
+        </h1>
+        <h2
+          className="ui huge header"
+          style={
+            Object {
+              "color": "white",
+            }
+          }
+        >
+          Here are some of the artists you follow:
+        </h2>
+        <div
+          className="ui large animated celled middle aligned list"
+          role="list"
+          style={
+            Object {
+              "color": "white",
+              "height": "80%",
+              "overflow": "scroll",
+            }
+          }
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

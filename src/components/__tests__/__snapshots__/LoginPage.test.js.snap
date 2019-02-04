@@ -26,7 +26,7 @@ exports[`when testing w/ snapshots renders correctly 1`] = `
       </h1>
       <a
         className="ui button button-rounded button-style--default"
-        href="http://localhost:3000/api/v1/login"
+        href="https://spotify-api-artists-only.herokuapp.com/api/v1/login"
         onClick={[Function]}
         role="button"
       >
